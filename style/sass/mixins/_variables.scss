@@ -1,0 +1,45 @@
+// map(color)
+// $colors: ( black: #000, white: #fff, dark-gray: #4B4B4B, gray: #ccc, bg-gray: #EFEFEF, text: #333, text-note: #999, dark-orange: #C78157, orange: #F29129, navy: #292F73, facebook: #305097, twitter: #00aced, instagram: #d93175, line: #00b900, );
+// @function colors($key) {
+// 	@return map-get($colors, $key);
+// }
+
+// size
+// $max_pc: 1440px;
+// $pad_pc: 100px;
+// $pad_sp: 15px;
+
+// hover
+// $hov_opacity: 0.7;
+// $hov_grad: linear-gradient(to bottom, rgba(colors(navy), 0.5) 0%, rgba(colors(orange), 0.5) 100%);
+
+// z-index
+// $z_spnav: 5;
+// $z_header: 10;
+// $z_hamburger: 11;
+// $z_loading: 20;
+
+// border-raidus
+// $bdr_rad: 5px;
+
+$primary: #ED7B1B;
+$secondary: #242E56;
+
+// アイコンフォント
+$f-fa: "Font Awesome 6 Free";
+$f-fab: "Font Awesome 6 Brands";
+$f-mdi: Material Design Icons;
+$f-robo: 'Roboto', sans-serif;
+$f-open: 'Open Sans', sans-serif;
+$f-sawa: 'Sawarabi Gothic', sans-serif;
+// 文字フォント
+$base-font: "Noto Sans JP","ヒラギノ角ゴシック ProN", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+$f-min: "ヒラギノ明朝 ProN","Hiragino Mincho ProN","ＭＳ Ｐ明朝","MS PMincho","游明朝体","Yu Mincho",YuMincho,serif;
+$base-font-color: #1A1A1A;
+
+// プレークポイント
+$screen-tb: 768px;
+$screen-sp: 480px;
+
+$screen-pc-min: ($screen-tb + 1) !default;
+$screen-tb-min: ($screen-sp + 1) !default;

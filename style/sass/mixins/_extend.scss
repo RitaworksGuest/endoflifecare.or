@@ -147,7 +147,7 @@ blockquote {
   text-decoration: none;
 
   @media only screen and (max-width: $screen-tb) {
-    padding: 10px;
+    padding: 10px 10px 10px 35px;
   }
 
   &::before {
@@ -168,6 +168,13 @@ blockquote {
 
   &:hover {
     color: #A80000;
+  }
+  &.-word{
+    color: #005CA0;
+    &::before{
+      content: "\f1c2";
+      color: #005CA0;
+    }
   }
 }
 
@@ -319,7 +326,12 @@ blockquote {
   background: #fff;
   box-shadow: 0 3px 36px rgba($color: #000000, $alpha: .12);
   padding: 50px 50px 40px;
-
+  &.-fix{
+    padding: 30px 70px 30px 40px;
+    @media only screen and (max-width: $screen-tb) {
+      padding: 25px 10px 10px;
+    }
+  }
   @media only screen and (max-width: $screen-tb) {
     padding: 25px 25px 10px;
   }
@@ -327,7 +339,35 @@ blockquote {
   .anchor-list {
     display: flex;
     flex-wrap: wrap;
-
+    &.no-line{
+      @media only screen and (max-width: $screen-tb) {
+      justify-content: space-between;
+      }
+     li{
+       margin-right: 40px;
+       @media only screen and (max-width: $screen-tb) {
+       width: calc(50% - 5px);
+       margin-right: 0;
+      }
+    a{
+      border-left: none;
+      padding: 0;
+    }
+      &:nth-child(2n) {
+        border-right: none;
+      }
+      &:last-child{
+       a{
+        border-right: none;
+       }
+      }
+      &.add-border{
+        a{
+          border-right: none;
+        }
+      }
+     }
+    }
     li {
       @media only screen and (max-width: $screen-tb) {
         width: calc(50%);

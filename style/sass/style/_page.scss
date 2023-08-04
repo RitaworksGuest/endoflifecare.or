@@ -3282,7 +3282,7 @@ button.more {
       &:not(:nth-of-type(3n)) {
         margin-right: unset;
       }
-  
+
       &:not(:nth-of-type(-n+3)) {
         margin-top: unset;
       }
@@ -4008,7 +4008,7 @@ button.more {
         content: "\f058";
         position: absolute;
         top: 50%;
-        transform: translateY( -50%);
+        transform: translateY(-50%);
         left: -46px;
         color: $primary;
         font-family: $f-fa;
@@ -4154,7 +4154,7 @@ button.more {
       &:not(:nth-of-type(2n)) {
         margin-right: unset;
       }
-  
+
       &:not(:nth-of-type(-n+2)) {
         margin-top: unset;
       }
@@ -4184,3 +4184,419 @@ button.more {
     }
   }
 }
+
+//いのちの授業講師を目指す方へ-------------START----------
+.breadcrumb-wrap {
+  height: 40px;
+  margin-bottom: 10px;
+
+  @media only screen and (max-width: $screen-tb) {
+    display: none;
+  }
+
+  ul.breadcrumb {
+    max-width: 1000px;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      font-weight: bold;
+      line-height: 40px;
+
+      &:first-child {
+        &:before {
+          content: none;
+        }
+      }
+
+      &:before {
+        content: "\f101";
+        margin: 0 15px;
+
+        font: {
+          family: $f-fa;
+          weight: 900;
+        }
+
+        color: $primary;
+      }
+
+      >a {
+        display: inline-block;
+        color: $primary;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+body.side {
+  background: #F0F0F0;
+
+  .l-container {
+    overflow: visible;
+  }
+
+  &::before {
+    content: none;
+  }
+
+  header {
+    background: #fff;
+  }
+
+  .sticky-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 98px;
+    position: relative;
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+
+    @media only screen and (max-width: $screen-tb) {
+      padding-top: 50px;
+    }
+
+    .side-nav-wrap {
+      padding-top: 42px;
+      flex: .3;
+      height: 100%;
+    }
+
+    .side-left {
+
+      @media only screen and (max-width: $screen-tb) {
+        position: static;
+        padding-top: 0;
+        flex: auto;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .side-nav {
+        padding: 0 40px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 10px;
+
+        li {
+          border-bottom: 1px solid #DDDDDD;
+
+          &.login-btn {
+            border-bottom: none;
+
+            a {
+              color: #fff;
+              max-width: 240px;
+              margin: 25px auto auto auto;
+
+              &:hover {
+                &::before {
+                  background: $primary;
+                }
+
+                &::after {
+                  color: #fff;
+                }
+              }
+
+              &::before {
+                background: #fff;
+                border-radius: 50%;
+                left: auto;
+                right: 14px;
+                transition: all .3s;
+              }
+
+              &::after {
+                content: "\f2f6";
+                font-family: $f-fa;
+                font-weight: 700;
+                color: $primary;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 25px;
+                transition: all .3s;
+              }
+            }
+          }
+
+          a {
+            text-decoration: none;
+            color: $base-font-color;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.4;
+            position: relative;
+            display: block;
+            padding: 20px 0 20px 53px;
+
+            transition: all .3s;
+
+            @media only screen and (max-width: $screen-tb) {
+              padding-left: 40px;
+              font-size: 14px;
+            }
+
+            &::before {
+              content: "";
+              width: 38px;
+              height: 38px;
+              background: url(../../img/common/btn01_hv.png) no-repeat center/cover;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 0;
+
+              @media only screen and (max-width: $screen-tb) {
+                width: 30px;
+                height: 30px;
+              }
+            }
+
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    .side-content {
+      flex: 1;
+
+      @media only screen and (max-width: $screen-tb) {
+        flex: auto;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0;
+
+      }
+    }
+  }
+}
+
+.side-container {
+  max-width: 1000px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 56px 80px 100px;
+
+  @media only screen and (max-width: $screen-tb) {
+    padding: 30px 20px 50px;
+    border-radius: 0;
+  }
+}
+
+.gray-text {
+  font-size: 15px;
+  color: #656565;
+
+  @media only screen and (max-width: $screen-tb) {
+    font-size: 13px;
+  }
+}
+
+.file-list {
+  .file-item {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      @media only screen and (max-width: $screen-tb) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  >button.more {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+
+    span {
+      color: $base-font-color;
+
+      &::before {
+        color: $primary;
+      }
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.three-item {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    width: calc((100% / 3) - 20px);
+    margin-bottom: 23px;
+
+    a {
+      max-width: 100%;
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    &:not(:nth-child(3n)) {
+      margin-right: 29px;
+
+      @media only screen and (max-width: $screen-tb) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    width: 340px;
+
+    a {
+      max-width: 100%;
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 29px;
+
+      @media only screen and (max-width: $screen-tb) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.gray-video {
+  border-radius: 10px;
+  background: #F0F0F0;
+  padding: 25px 30px;
+
+  @media only screen and (max-width: $screen-tb) {
+    padding: 15px;
+  }
+
+  .youtube-wrap {
+    padding-top: 57%;
+  }
+}
+
+.youtube-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .list-item {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+
+    @media only screen and (max-width: $screen-sp) {
+      width: 100%;
+    }
+
+    .list-youtube {
+      background: #F0F0F0;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    >.youtube-wrap {
+
+      padding-top: 57%;
+    }
+
+    .ttl {
+      font-size: 22px;
+      font-weight: 400;
+      font-family: $f-sawa;
+      line-height: 1.36;
+      padding: 10px 0;
+
+      @media only screen and (max-width: $screen-tb) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.arrow-wrap-list {
+  li {
+    padding-left: 53px;
+    line-height: 1.5;
+    font-weight: bold;
+    position: relative;
+
+    @media only screen and (max-width: $screen-tb) {
+      padding-left: 40px;
+    }
+    a{
+      color: $base-font-color;
+      transition: all .3s;
+      &:hover{
+        color: $primary;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &::before {
+      content: "";
+      width: 38px;
+      height: 38px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background: url(../../img/common/btn01_hv.png) no-repeat center/cover;
+
+      @media only screen and (max-width: $screen-tb) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.faq-list {
+  article {
+    &:not(:last-child) {
+      margin-bottom: 100px;
+
+      @media only screen and (max-width: $screen-tb) {
+        margin-bottom: 50px;
+      }
+    }
+
+    .acordion-wrap {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+
+        @media only screen and (max-width: $screen-tb) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+//いのちの授業講師を目指す方へ-------------END----------

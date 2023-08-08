@@ -4,6 +4,7 @@
 .top-news {
   padding: 0 0 15px;
 
+
   @media only screen and (max-width: $screen-tb) {
     padding: 0 0 71px;
   }
@@ -3519,19 +3520,25 @@ button.more {
       width: 100%;
 
       @media only screen and (max-width: $screen-tb) {
+      
         .profile-box {
-          position: absolute;
-          top: 20px;
-          left: 150px;
+          // position: absolute;
+          // top: 20px;
+          // left: 150px;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          width: calc(100% - 170px);
+          width: calc(100% - 140px);
           min-height: 90px;
           margin-bottom: unset;
         }
+        .voice-inner{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 15px;
+        }
       }
-
+   
       .name-txt {
         margin-bottom: 10px;
         font-weight: bold;

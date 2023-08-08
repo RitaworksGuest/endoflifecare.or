@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+.table01 {
+  width: 100%;
+  border-spacing: 0;
+  border-top: 1px solid #D0D0D0;
+
+  &.-notop {
+    border-top: none;
+  }
+
+  tr {
+
+    th,
+    td {
+      padding: 16px 18px;
+      letter-spacing: 0;
+      vertical-align: initial;
+      border-bottom: 1px solid #D0D0D0;
+
+      @media only screen and (max-width: $screen-tb) {
+        display: block;
+        width: 100% !important;
+        line-height: 1.5;
+        word-break: break-all;
+      }
+    }
+
+    th {
+      @media only screen and (max-width: $screen-tb) {
+        border-bottom: none !important;
+        padding: 14px 21px 0 !important;
+      }
+    }
+
+    td {
+      @media only screen and (max-width: $screen-tb) {
+        padding: 9px 21px 15px !important;
+      }
+
+      &.-mid-td {
+        vertical-align: middle !important;
+      }
+    }
+
+    &.-top {
+      th,
+      td {
+        vertical-align: top;
+      }
+    }
+
+    &.-mid {
+      th,
+      td {
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+
+    &.-mid-th {
+      th {
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+  }
+
+  &.-top {
+    border-top: none;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// その他
+// --------------------------------------------------
+.overflow-table {
+  overflow-x: auto;
+}
+
+.nodrop-table {
+  tr {
+
+    th,
+    td {
+      @media only screen and (max-width: $screen-tb) {
+        display: table-cell;
+        width: auto !important;
+      }
+    }
+
+    th {
+      @media only screen and (max-width: $screen-tb) {
+        white-space: nowrap;
+        padding: 9px 21px !important;
+        border-bottom: 1px solid #D0D0D0 !important;
+      }
+    }
+  }
+}

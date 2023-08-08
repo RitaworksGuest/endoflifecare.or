@@ -1,0 +1,497 @@
+@charset "UTF-8";
+
+// --------------------------------------------------
+// お知らせ
+// --------------------------------------------------
+// お知らせ一覧にPDFアイコンを表示する
+// @extend で対応してください。
+.news-link-event01 {
+
+  // aタグがテキストの場合
+  a {
+    &[href$=".pdf"] {
+      display: block;
+      position: relative;
+      padding-left: 20px;
+
+      &:after {
+        content: "\f1c1";
+        font-size: 16px;
+        font-family: $f-fa;
+        font-weight: 700;
+        color: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &[href="#"] {
+      color: $base-font-color;
+      text-decoration: none;
+      pointer-events: none;
+    }
+  }
+}
+
+.news-link-event02 {
+  // カードタイプ（.hover-all）の場合
+  // デザインによって.txt-wrap/.ttlのクラス名変更必要
+  pointer-events: none;
+
+  a {
+    pointer-events: all;
+
+    &[href="#"] {
+      pointer-events: none;
+    }
+
+    &[href$=".pdf"] {
+
+      // +.txt-wrap {
+      //   .ttl {
+      //     &:after {
+      //       content: "";
+      //       height: 16px;
+      //       width: 16px;
+      //       background: url(../img/pdf.png) no-repeat center / contain;
+      //       margin-left: 5px;
+      //     }
+      //   }
+      // }
+      ~.ttl {
+        display: block;
+        position: relative;
+        padding-left: 20px;
+
+        &:after {
+          content: "\f1c1";
+          font-size: 16px;
+          font-family: $f-fa;
+          font-weight: 700;
+          color: red;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// お知らせリスト（ここから）
+// --------------------------------------------------
+
+.news-list {
+  @extend .news-link-event01;
+
+  @media only screen and (max-width: $screen-tb) {
+    margin-bottom: 35px;
+  }
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 22px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .news-head {
+      display: flex;
+      align-items: center;
+      flex: 0.288;
+      flex-wrap: wrap;
+
+      @media only screen and (max-width: $screen-tb) {
+        width: 100%;
+        flex: auto;
+        margin-bottom: 9px;
+      }
+
+      time {
+        display: inline-block;
+        font-size: 14px;
+        font-family: $f-robo;
+        font-weight: 500;
+        color: #242e56;
+        letter-spacing: 0;
+        margin-right: 15px;
+
+        @media only screen and (max-width: $screen-tb) {
+          font-size: 12px;
+        }
+      }
+
+      .cat {
+        display: inline-block;
+        height: 25px;
+        width: 100%;
+        max-width: 92px;
+        font-size: 10px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 3px;
+        background: $primary;
+
+        @media only screen and (max-width: $screen-tb) {
+          height: 21px;
+          max-width: 84px;
+          font-size: 10px;
+          line-height: 21px;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      flex: 1;
+      font-weight: 500;
+      color: $base-font-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.event-list {
+  @extend .news-link-event02;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: 1200px) {
+    margin-bottom: 27px;
+    justify-content: space-between;
+  }
+
+  li {
+    @extend .hover-all;
+    width: 360px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 20px 20px 46px;
+    margin-bottom: 40px;
+
+    @media only screen and (max-width: 1200px) {
+      width: calc(50% - 10px);
+      margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: $screen-tb) {
+      width: 100%;
+      padding: 14px 20px 27px;
+    }
+
+    &:hover {
+      .ttl {
+        color: $primary;
+      }
+    }
+
+    &:not(:nth-child(3n)) {
+      margin-right: 40px;
+
+      @media only screen and (max-width: 1200px) {
+        margin-right: 0;
+      }
+    }
+
+    .this-img {
+      // height: 180px;
+      padding-top: 56%;
+      margin-bottom: 23px;
+
+      // @media only screen and (max-width: $screen-tb) {
+      //   height: 230px;
+      // }
+
+      // @media only screen and (max-width: $screen-sp) {
+      //   height: 170px;
+      // }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+
+    .ttl {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 13px;
+      margin-bottom: 13px;
+      transition: all 0.3s;
+
+      @media only screen and (max-width: $screen-tb) {
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .date-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 500;
+      color: #6c6c6c;
+
+      @media only screen and (max-width: $screen-tb) {
+        font-size: 12px;
+      }
+
+      .date {
+        display: inline-block;
+        font-size: 13px;
+        letter-spacing: 0;
+        position: relative;
+        padding-left: 18px;
+        margin-right: 23px;
+
+        @media only screen and (max-width: $screen-tb) {
+          font-size: 12px;
+          padding-left: 16px;
+          margin-right: 29px;
+        }
+
+        &::before {
+          content: "\f073";
+          font-size: 12px;
+          font-family: $f-fa;
+          font-weight: 700;
+          color: $primary;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+
+          @media only screen and (max-width: $screen-tb) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .tag-wrap {
+        position: relative;
+        padding-left: 14px;
+
+        &::before {
+          content: "\f276";
+          font-family: $f-fa;
+          font-weight: 700;
+          color: $primary;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+
+          @media only screen and (max-width: $screen-tb) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .tag {
+        display: inline-block;
+
+        &:not(:last-child) {
+          position: relative;
+          padding-right: 11px;
+
+          &::before {
+            content: "/";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// デフォルト
+// --------------------------------------------------
+
+// リストの中の擬似要素にまでtext-indentが継承される問題！！！
+// text-indentを使わない OR before,afterにデフォルト(_core)でtext-indent:0;にする
+
+.dot-list {
+  >li {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    position: relative;
+    padding-left: 25px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @media only screen and (max-width: $screen-tb) {
+        margin-bottom: 11px;
+      }
+    }
+
+    &:before {
+      content: "●";
+      font-size: 14px;
+      color: $primary;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &[style="list-style-type: circle;"],
+  &[style="list-style-type: square;"] {
+    >li {
+      text-indent: 0;
+      list-style-type: inherit;
+
+      &::before {
+        content: none;
+      }
+
+      &::marker {
+        color: #7c7eba;
+      }
+    }
+  }
+
+  &.-references {
+    >li {
+      line-height: 1.5;
+
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+
+      a {
+        color: $primary;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &.-wide {
+    >li {
+      line-height: 1.5;
+
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.num-list {
+  counter-reset: section;
+
+  &.-fix {
+    >li {
+      padding-left: 16px;
+
+      &::before {
+        font-size: 16px;
+        top: 0;
+      }
+    }
+  }
+
+  >li {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    counter-increment: section;
+    position: relative;
+    padding-left: 23px;
+
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+
+    &:before {
+      content: counter(section);
+      font-size: 22px;
+      font-family: $f-robo;
+      color: $primary;
+      position: absolute;
+      top: -4px;
+      left: 0;
+    }
+  }
+
+  &[style="list-style-type: lower-alpha;"],
+  &[style="list-style-type: lower-roman;"],
+  &[style="list-style-type: upper-alpha;"],
+  &[style="list-style-type: upper-roman;"] {
+    >li {
+      text-indent: 0;
+      list-style-type: inherit;
+      margin-left: 0;
+
+      &::before {
+        content: none;
+      }
+
+      &::marker {
+        color: #7c7eba;
+      }
+    }
+  }
+}
+
+.arrow-list {
+  li {
+    line-height: 1.43;
+
+    a {
+      padding-left: 15px;
+      font-size: 14px;
+
+      letter-spacing: .04em;
+      color: $secondary;
+      position: relative;
+      transition: all .3s;
+      display: inline-block;
+
+      text-decoration: none;
+
+      @media only screen and (max-width: $screen-tb) {
+        font-size: 12px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+
+      &::before {
+        content: "\f061";
+        font-weight: 700;
+        font-family: $f-fa;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        font-size: 12px;
+      }
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}

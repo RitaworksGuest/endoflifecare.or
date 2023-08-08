@@ -11,18 +11,6 @@
   }
 }
 
-// 幅を指定するパターン
-// 1.「.center-box」を使用
-// <div class="center-box" style="max-width:800px"></div>
-// 2.「.container.-w800」などサブクラス使用
-// .container {
-//   &.-w800 {
-//     width: calc(800px + #{$gutter-pc});
-//     @media only screen and (max-width: $screen-tb) {
-//       width: auto;
-//     }
-//   }
-// }
 
 // --------------------------------------------------
 // Body

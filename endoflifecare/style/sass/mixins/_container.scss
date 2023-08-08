@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: auto;
+  padding: 0 10px;
+  &.relative {
+    position: relative;
+  }
+  &.-w900 {
+    max-width: 920px;
+  }
+  &.-w1000 {
+    max-width: 1000px;
+  }
+  &.-w1200 {
+    max-width: 1220px;
+  }
+
+  &.-w1160 {
+    max-width: 1180px;
+  }
+  @media only screen and (max-width: $screen-tb) {
+    padding: 0 25px;
+  }
+}

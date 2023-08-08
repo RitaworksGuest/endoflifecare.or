@@ -1,0 +1,33 @@
+@mixin fz0 {
+	font-size: 0;
+	line-height: 1;
+}
+
+@mixin fz($size:16, $lh:32) {
+	font-size: ( $size / 16) * 1rem;
+	line-height: $lh / $size;
+}
+
+@mixin fznl($size:16) {
+	font-size: ( $size / 16) * 1rem;
+	line-height: 1.5;
+}
+
+// @mixin system {
+// 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+// }
+
+// @mixin systemB {
+// 	@include system;
+// 	font-weight: bold;
+// }
+
+// @mixin YuGothic {
+// 	font-feature-settings: "pkna" 1;
+// 	font-family: "游ゴシック体", YuGothic, "Yu Gothic Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+// }
+
+// @mixin YuGothicB {
+// 	@include YuGothic;
+// 	font-weight: bold;
+// }

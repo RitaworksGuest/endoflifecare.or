@@ -130,6 +130,29 @@ h3 {
     margin-bottom: 28px;
     font-family: $f-sawa;
 
+    .required {
+      background: #CB1616;
+      border-radius: 5px;
+      margin-left: 20px;
+      height: 26px;
+      width: 54px;
+      display: inline-block;
+      text-align: center;
+      line-height: 26px;
+      color: #fff;
+      font-size: 13px;
+
+
+      @media only screen and (max-width: $screen-tb) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        border-radius: 3px;
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
     @media only screen and (max-width: $screen-tb) {
       font-size: 18px;
       line-height: 1.65;

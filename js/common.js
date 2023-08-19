@@ -195,31 +195,37 @@ $(function () {
 // スライドメニューに関しては、slidemenuOpen/slidemenuCloseへ記載する
 // ------------------------------------------------------------
 
-$(function(){
+$(function () {
   $('.slide-list .list-item p').accordion({
     otherClose: false,
   });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   let body = $(document.body);
   // ①マウスをボタンに乗せた際のイベントを設定
   var winHeight = $(window).height();
   var winWitdh = $(window).width();
   if (winWitdh > 768) {
-    $('#h-nav .menu-item.has-list').hover(function() {
+    $('#h-nav .menu-item.has-list').hover(function () {
       body.addClass("menu");
       // ②乗せたボタンに連動したメガメニューをスライドで表示させる
       $(this).find('.menu-contents').addClass("show");
-   
-    // ③マウスをボタンから離した際のイベントを設定
-    }, function() {
+
+      // ③マウスをボタンから離した際のイベントを設定
+    }, function () {
       body.removeClass("menu");
       // ④マウスを離したらメガメニューをスライドで非表示にする
       $(this).find('.menu-contents').removeClass("show");
-   
+
     });
   }
 
- 
+});
+$(function () {
+  var fix_btn = $(".event-details-btn");
+  fix_btn.hide();
+  $(window).scroll(function () {
+    $(this).scrollTop() > 100 ? fix_btn.fadeIn() : fix_btn.fadeOut();
+  });
 });

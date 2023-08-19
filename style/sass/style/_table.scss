@@ -10,7 +10,11 @@
   }
 
   tr {
-
+    &.bd-none{
+        td{
+          border-bottom: none;
+        }
+    }
     th,
     td {
       padding: 16px 18px;
@@ -49,6 +53,7 @@
         vertical-align: top;
       }
     }
+
 
     &.-mid {
       th,

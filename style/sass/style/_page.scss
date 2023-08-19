@@ -3593,7 +3593,18 @@ button.more {
   }
   &.-uhm{
     .img-btn{
+      @media only screen and (max-width: $screen-tb) {
+       &:not(:last-child){
+         margin-bottom: 20px;
+       }
+      }
       .contents-box{
+        @media only screen and (max-width: $screen-tb) {
+        padding: 40px 40px 20px;
+        .img-box{
+          margin-bottom: 25px;
+        }
+        }
         .txt-box{
           margin-bottom: 40px;
         }
@@ -4784,8 +4795,9 @@ body.side {
   text-align: center;
   margin-bottom: 54px;
   @media only screen and (max-width: $screen-tb) {
-   font-size: 22px;
+   font-size: 18px;
    margin-bottom: 30px;
+   line-height: 26px;
    }
   span{
 letter-spacing: 0;
@@ -4795,13 +4807,18 @@ font-size: 16px;
  }
   }
 }
+.sub-see-txt{
+  @media only screen and (max-width: $screen-tb) {
+   line-height: 21px;
+    }
+}
 .seemore-list{
   &.-height{
     .seemore-item{
       height: 432px;
       padding: 50px 50px 142px;
       @media only screen and (max-width: $screen-tb) {
-        padding: 25px 25px 90px;
+        padding: 40px 40px 90px;
        }
       .dot-list{
         li{
@@ -4899,7 +4916,7 @@ font-size: 16px;
     position: relative;
     transition: height .3s;
     @media only screen and (max-width: $screen-tb) {
-      padding: 25px 25px 80px;
+      padding: 40px 40px 80px;
      }
     &.show{
       height: auto;
@@ -5019,7 +5036,7 @@ transition: all .3s;
     background: #fff;
     box-shadow: 0 3px 36px rgba($color: #000, $alpha: 0.12);
     @media only screen and (max-width: $screen-tb) {
-     padding: 25px;
+     padding: 40px;
      }
     &:not(:last-child){
       margin-bottom: 35px;
@@ -5039,11 +5056,11 @@ transition: all .3s;
     border-radius: 20px;
     background: #fff;
     box-shadow: 0 3px 36px rgba($color: #000, $alpha: 0.12);
-    padding: 30px 50px;
+    padding: 45px 50px 30px;
     border: 3px solid #fff;
     transition: all .3s;
     @media only screen and (max-width: $screen-tb) {
-    padding: 15px 25px;
+    padding: 40px;
     margin-bottom: 20px;
      }
     @media only screen and (max-width: $screen-sp) {
@@ -5102,4 +5119,11 @@ transition: all .3s;
       width: 100% !important;
        }
   }
+}
+.year-memory{
+  padding-top: 60px;
+  background: #fff;
+  @media only screen and (max-width: $screen-tb) {
+   padding-top: 0;
+     }
 }

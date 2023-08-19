@@ -50,6 +50,16 @@
       background: url(../../img/common/btn01_hv.png) no-repeat center/cover;
     }
   }
+  &.-share{
+    &::before{
+      background: url(../../img/common/btn_share.png) no-repeat center/cover;
+    }
+    &:hover {  
+      &::before {
+        background: url(../../img/common/btn_share_hv.png) no-repeat center/cover;
+      }
+    }
+  }
 
   &.-no-arrow {
     &::before {
